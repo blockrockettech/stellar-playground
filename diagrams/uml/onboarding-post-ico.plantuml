@@ -1,0 +1,33 @@
+@startuml
+
+
+StellarApp -> StellarService: Signup & KYC
+note left: Assumes all\nuser are KYC'd
+
+StellarService -> StellarApp: KYC Success
+
+StellarApp -> StellarApp: Create Account
+note left: Free\n(Ac inactive)
+
+StellarApp -> StellarService: Register XLM address
+note right: Ties XLM and Stellar Account\n(Public Key Only)
+
+StellarService -> StellarApp: Success
+
+StellarApp -> StellarService: User Tops-up Min Amount (FIAT)
+note left: Forces min balance\nbefore trustline creation
+
+StellarService -> StellarApp: Success
+
+StellarService -> StellarApp: Funds Min XLM balance
+note left: Automatically triggered\nonce topped up
+
+StellarApp -> StellarService: Triggers Trustline setup
+
+StellarService -> Stellar: Signed by Stellar
+
+Stellar -> StellarApp: Success
+note left: Trustline now in existence
+
+
+@enduml

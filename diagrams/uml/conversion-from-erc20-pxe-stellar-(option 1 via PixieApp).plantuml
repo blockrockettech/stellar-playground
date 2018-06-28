@@ -1,0 +1,40 @@
+@startuml
+
+
+StellarApp -> StellarService: Signup & KYC
+note left: Assumes all\nuser are KYC'd
+
+StellarService -> StellarApp: KYC Success
+
+StellarApp -> StellarApp: Create Account
+note left: Free\n(Ac inactive)
+
+StellarApp -> StellarService: Register XLM address
+note right: Tie XLM & Stellar
+
+'TODO where is the trustline setup?
+
+StellarService -> StellarApp: Success
+note left: Expose public\nXLM address to user
+
+User -> StellarBifrost: Requests token-swap
+note right: XLM address provided
+
+StellarBifrost -> StellarService: validate XLM address known
+StellarService -> StellarBifrost: Success
+
+StellarBifrost -> Stellar: validate min XLM balance
+note right: How would this work in reality?
+Stellar -> StellarBifrost: Success
+
+StellarBifrost -> StellarBifrost: Generate ETH address
+
+
+StellarBifrost -> User: Present ETH address\nto send ERC-20
+User -> StellarBifrost: Send ERC-20 to Generated Address
+
+StellarBifrost -> StellarBifrost: ERC20 received
+
+StellarBifrost -> Stellar: Send STE token to XLM address
+
+@enduml

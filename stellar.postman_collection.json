@@ -1,0 +1,305 @@
+{
+	"variables": [],
+	"info": {
+		"name": "stellar",
+		"_postman_id": "9c990f1c-8635-b5c0-667c-24f75dcbbfe9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account-create",
+			"request": {
+				"url": "http://localhost:3000/account/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountName\": \"kim\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "account-configure",
+			"request": {
+				"url": "http://localhost:3000/account/configure",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountName\": \"issuer\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "account-get",
+			"request": {
+				"url": "http://localhost:3000/account/get/elvis",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "account-fund-friendbot",
+			"request": {
+				"url": "http://localhost:3000/account/fund/friendbot/mer",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "account-list-all",
+			"request": {
+				"url": "http://localhost:3000/accounts/all",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "account-load",
+			"request": {
+				"url": "http://localhost:3000/account/load/elvis",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "trustline-check",
+			"request": {
+				"url": "http://localhost:3000/trustline/check/pxe",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountName\":\"james\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "trustline-create",
+			"request": {
+				"url": "http://localhost:3000/trustline/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fromAccountName\":\"daniel\",\n  \"toAccountName\":\"pxe\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "trustline-create-prepaid",
+			"request": {
+				"url": "http://localhost:3000/trustline/create/prepaid",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fromAccountName\":\"pxe\",\n  \"toAccountName\":\"pxe\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "trustline-clear",
+			"request": {
+				"url": "http://localhost:3000/trustline/clear",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fromAccountName\":\"fred\",\n  \"toAccountName\":\"issuer\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "account-fund",
+			"request": {
+				"url": "http://localhost:3000/account/fund",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fromAccountName\":\"pxe\",\n    \"toAccountName\":\"kim\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "asset-transfer",
+			"request": {
+				"url": "http://localhost:3000/asset/transfer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"assetAccountName\": \"pxe\",\t\t\n  \"fromAccountName\":\"pxe\",\n  \"toAccountName\": \"kanye\",\n  \"amount\": \"333\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "asset-transfer-prepaid",
+			"request": {
+				"url": "http://localhost:3000/asset/transfer/prepaid",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assetAccountName\": \"pxe\",\t\t\n  \"fromAccountName\":\"kanye\",\n  \"toAccountName\": \"kim\",\n  \"amount\": \"50\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "asset-transfer-thirdpartypaid",
+			"request": {
+				"url": "http://localhost:3000/asset/transfer/thirdpartypaid",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assetAccountName\": \"pxe\",\n   \"thirdPartyAccountName\":\"pxe\",\n  \"fromAccountName\":\"elvis\",\n  \"toAccountName\": \"jesus\",\n  \"amount\": \"3\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "asset-transfer-xdr",
+			"request": {
+				"url": "http://localhost:3000/asset/transfer/xdr",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"xdrTransaction\": \"AAAAAAat/5IwfFKrx8ilMXBYa+td1h+6OWn8pUs1y/5H/LZOAAAAZACJQw4AAAArAAAAAAAAAAAAAAABAAAAAQAAAABohWAhJpZ5WJHYGcJIdYB/Qubix697yN4VEW2Wcw9lywAAAAEAAAAApQ/tiAtAutNG3E4YVYc9IBuaKIdlh10AU4dLoswjdAMAAAABUFhFAAAAAAAGrf+SMHxSq8fIpTFwWGvrXdYfujlp/KVLNcv+R/y2TgAAAAAF9eEAAAAAAAAAAAFzD2XLAAAAQCidIamLRe4yaKDZu3GgJruqiKchgRUI19fkdIWLRcItulsvFIa2pkE5puSNTFQp3OUI1bDvE1iwnLeJ63ab6gY=\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "native-transfer",
+			"request": {
+				"url": "http://localhost:3000/native/transfer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fromAccountName\":\"pxe\",\n  \"toAccountName\": \"kanye\",\n  \"amount\": \"1333\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,33 @@
+@startuml
+
+'StellarApp -> StellarService: Start Transaction
+'note left: Holds private key
+'
+'StellarService --> StellarService: Creates Job
+'StellarService -> StellarApp: JobID (ABC-123)
+
+StellarApp -> StellarService: Cashout STE - (TX1)
+note left: User
+
+StellarService --> StellarService: Sign/Validate (TX1)
+
+StellarService -> Stellar: Submit TX1 to Network
+
+Stellar -> StellarService: Credited STE
+
+StellarService -> StellarService: Calculate Fees\nDetermine Cashout Price\nTops up STE Float
+
+StellarService -> StellarApp: Adjust Balance
+
+StellarService -> Merchant: Adjust Balance
+
+StellarService -> Stellar: Submits Sell Order (STE)
+note left: Determine by\nmarket price
+note right: Needs\nliquidity
+
+Stellar --> Stellar: Order Fullfilled
+
+Stellar -> StellarService: XLM balance updated\nSTE float reduced
+note left: Once XLM topped up,\ncash out to Fiat (non-dex)
+
+@enduml

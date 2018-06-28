@@ -1,0 +1,37 @@
+@startuml
+
+
+User -> StellarBifrost: Requests token-swap
+note right: XLM address provided
+
+StellarBifrost -> Stellar: validate XLM trustline setup
+Stellar -> StellarBifrost: Success
+
+StellarBifrost -> Stellar: validate min XLM balance
+Stellar -> StellarBifrost: Success
+
+StellarBifrost -> StellarBifrost: Generate ETH address
+
+
+StellarBifrost -> User: Present ETH address\nto send ERC-20
+User -> StellarBifrost: Send ERC-20 to Generated Address
+
+StellarBifrost -> StellarBifrost: ERC20 received
+
+StellarBifrost -> Stellar: Send STE token to XLM address
+note right: Stellar account now has STE token
+
+User -> StellarApp: User Registers (KYC)
+StellarApp -> StellarService: registration & KYC
+StellarService -> StellarApp: Success
+StellarApp -> User: Success
+
+User -> StellarApp: Import Stellar Account
+StellarApp -> StellarService: Tie User to Stellar Account
+StellarService -> StellarApp: Success
+StellarApp -> User: Success
+note left: User Now Has STE Balance in StellarApp
+
+
+
+@enduml
