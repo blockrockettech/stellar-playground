@@ -104,7 +104,7 @@ app.post('/asset/transfer/thirdpartypaid', function (req, res) {
 
 app.post('/asset/transfer/xdr', function (req, res) {
     return promiseResult(stellarFacade.xdrTransferAsset({
-        thirdPartyAccountName: 'pxe', // FIXME - hardcoded
+        thirdPartyAccountName: 'wak', // FIXME - hardcoded
         xdrTransaction: req.body.xdrTransaction
     }), res);
 });
